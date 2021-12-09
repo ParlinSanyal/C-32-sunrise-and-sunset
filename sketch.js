@@ -10,7 +10,7 @@ var hour;
 var bg = "sunrise.png";
 
 function preload() {
-    backgroundImg=loadImage("sprite/sunset.png")
+    backgroundImg=loadImage("sunset.png")
 
     getBackgroundImg();
     
@@ -49,9 +49,10 @@ async function getBackgroundImg(){
     
     //change the data in JSON format and store it in variable responseJSON
     var responseJSON=await response.json()
-
-    //fetch datetime from responseJSON
     console.log(responseJSON)
+    
+    //fetch datetime from responseJSON
+    var datetime=responseJSON.datetime
     
     // slice the datetime to extract hour
     var hour=datetime.slice(11,13)
